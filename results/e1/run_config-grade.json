@@ -1,0 +1,100 @@
+{
+  "models": {
+    "lr": {
+      "name": "Logistic regression",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 256,
+          "C": 0.0003
+        },
+        {
+          "pca": 256,
+          "C": 0.001
+        },
+        {
+          "pca": 256,
+          "C": 0.003
+        },
+        {
+          "pca": 256,
+          "C": 0.01
+        },
+        {
+          "pca": 512,
+          "C": 0.0003
+        },
+        {
+          "pca": 512,
+          "C": 0.001
+        },
+        {
+          "pca": 512,
+          "C": 0.003
+        },
+        {
+          "pca": 512,
+          "C": 0.01
+        },
+        {
+          "pca": 1024,
+          "C": 0.0003
+        },
+        {
+          "pca": 1024,
+          "C": 0.001
+        },
+        {
+          "pca": 1024,
+          "C": 0.003
+        },
+        {
+          "pca": 1024,
+          "C": 0.01
+        },
+        {
+          "pca": 2048,
+          "C": 0.0003
+        },
+        {
+          "pca": 2048,
+          "C": 0.001
+        },
+        {
+          "pca": 2048,
+          "C": 0.003
+        },
+        {
+          "pca": 2048,
+          "C": 0.01
+        }
+      ]
+    }
+  },
+  "target": "grade",
+  "features_file": "features/resnet50_224.npz",
+  "seed": 42,
+  "outer_folds": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "inner_folds": 5,
+  "calibration_share": 0.15,
+  "selection": "mean of AUROC(referable) and AUROC(urgent) on the pooled inner out-of-fold predictions",
+  "calibration": "one-vs-rest isotonic regression on the inner out-of-fold predictions",
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1"
+  },
+  "started": "2026-10-25 04:27"
+}

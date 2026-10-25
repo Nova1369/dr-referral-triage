@@ -1,0 +1,931 @@
+{
+  "models": {
+    "b1": {
+      "name": "B1 Most likely class",
+      "features": "none",
+      "grid": [
+        {}
+      ]
+    },
+    "b2": {
+      "name": "B2 Image quality only",
+      "features": "quality",
+      "grid": [
+        {
+          "lr": 0.05,
+          "leaves": 7
+        },
+        {
+          "lr": 0.05,
+          "leaves": 15
+        },
+        {
+          "lr": 0.05,
+          "leaves": 31
+        },
+        {
+          "lr": 0.05,
+          "leaves": 63
+        },
+        {
+          "lr": 0.1,
+          "leaves": 7
+        },
+        {
+          "lr": 0.1,
+          "leaves": 15
+        },
+        {
+          "lr": 0.1,
+          "leaves": 31
+        },
+        {
+          "lr": 0.1,
+          "leaves": 63
+        }
+      ]
+    },
+    "b2a": {
+      "name": "B2a Image size only",
+      "features": "size",
+      "grid": [
+        {
+          "lr": 0.05,
+          "leaves": 7
+        },
+        {
+          "lr": 0.05,
+          "leaves": 15
+        },
+        {
+          "lr": 0.05,
+          "leaves": 31
+        },
+        {
+          "lr": 0.05,
+          "leaves": 63
+        },
+        {
+          "lr": 0.1,
+          "leaves": 7
+        },
+        {
+          "lr": 0.1,
+          "leaves": 15
+        },
+        {
+          "lr": 0.1,
+          "leaves": 31
+        },
+        {
+          "lr": 0.1,
+          "leaves": 63
+        }
+      ]
+    },
+    "b2b": {
+      "name": "B2b Quality, without size",
+      "features": "qual",
+      "grid": [
+        {
+          "lr": 0.05,
+          "leaves": 7
+        },
+        {
+          "lr": 0.05,
+          "leaves": 15
+        },
+        {
+          "lr": 0.05,
+          "leaves": 31
+        },
+        {
+          "lr": 0.05,
+          "leaves": 63
+        },
+        {
+          "lr": 0.1,
+          "leaves": 7
+        },
+        {
+          "lr": 0.1,
+          "leaves": 15
+        },
+        {
+          "lr": 0.1,
+          "leaves": 31
+        },
+        {
+          "lr": 0.1,
+          "leaves": 63
+        }
+      ]
+    },
+    "lr": {
+      "name": "Logistic regression",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 256,
+          "C": 0.0003
+        },
+        {
+          "pca": 256,
+          "C": 0.001
+        },
+        {
+          "pca": 256,
+          "C": 0.003
+        },
+        {
+          "pca": 256,
+          "C": 0.01
+        },
+        {
+          "pca": 512,
+          "C": 0.0003
+        },
+        {
+          "pca": 512,
+          "C": 0.001
+        },
+        {
+          "pca": 512,
+          "C": 0.003
+        },
+        {
+          "pca": 512,
+          "C": 0.01
+        },
+        {
+          "pca": 1024,
+          "C": 0.0003
+        },
+        {
+          "pca": 1024,
+          "C": 0.001
+        },
+        {
+          "pca": 1024,
+          "C": 0.003
+        },
+        {
+          "pca": 1024,
+          "C": 0.01
+        },
+        {
+          "pca": 2048,
+          "C": 0.0003
+        },
+        {
+          "pca": 2048,
+          "C": 0.001
+        },
+        {
+          "pca": 2048,
+          "C": 0.003
+        },
+        {
+          "pca": 2048,
+          "C": 0.01
+        }
+      ]
+    },
+    "gnb": {
+      "name": "Naive Bayes",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 8
+        },
+        {
+          "pca": 16
+        },
+        {
+          "pca": 32
+        },
+        {
+          "pca": 64
+        },
+        {
+          "pca": 128
+        }
+      ]
+    },
+    "lda": {
+      "name": "LDA",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 16
+        },
+        {
+          "pca": 32
+        },
+        {
+          "pca": 64
+        },
+        {
+          "pca": 128
+        },
+        {
+          "pca": 256
+        },
+        {
+          "pca": 512
+        }
+      ]
+    },
+    "qda": {
+      "name": "QDA",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 32,
+          "reg": 0.1
+        },
+        {
+          "pca": 32,
+          "reg": 0.3
+        },
+        {
+          "pca": 32,
+          "reg": 0.5
+        },
+        {
+          "pca": 32,
+          "reg": 0.7
+        },
+        {
+          "pca": 32,
+          "reg": 0.9
+        },
+        {
+          "pca": 64,
+          "reg": 0.1
+        },
+        {
+          "pca": 64,
+          "reg": 0.3
+        },
+        {
+          "pca": 64,
+          "reg": 0.5
+        },
+        {
+          "pca": 64,
+          "reg": 0.7
+        },
+        {
+          "pca": 64,
+          "reg": 0.9
+        },
+        {
+          "pca": 128,
+          "reg": 0.1
+        },
+        {
+          "pca": 128,
+          "reg": 0.3
+        },
+        {
+          "pca": 128,
+          "reg": 0.5
+        },
+        {
+          "pca": 128,
+          "reg": 0.7
+        },
+        {
+          "pca": 128,
+          "reg": 0.9
+        }
+      ]
+    },
+    "knn": {
+      "name": "k-NN",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 64,
+          "k": 25
+        },
+        {
+          "pca": 64,
+          "k": 50
+        },
+        {
+          "pca": 64,
+          "k": 100
+        },
+        {
+          "pca": 64,
+          "k": 200
+        },
+        {
+          "pca": 128,
+          "k": 25
+        },
+        {
+          "pca": 128,
+          "k": 50
+        },
+        {
+          "pca": 128,
+          "k": 100
+        },
+        {
+          "pca": 128,
+          "k": 200
+        },
+        {
+          "pca": 256,
+          "k": 25
+        },
+        {
+          "pca": 256,
+          "k": 50
+        },
+        {
+          "pca": 256,
+          "k": 100
+        },
+        {
+          "pca": 256,
+          "k": 200
+        }
+      ]
+    },
+    "cart": {
+      "name": "Decision tree",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 16,
+          "depth": 5,
+          "leaf": 10
+        },
+        {
+          "pca": 16,
+          "depth": 5,
+          "leaf": 30
+        },
+        {
+          "pca": 16,
+          "depth": 5,
+          "leaf": 60
+        },
+        {
+          "pca": 16,
+          "depth": 5,
+          "leaf": 100
+        },
+        {
+          "pca": 16,
+          "depth": 8,
+          "leaf": 10
+        },
+        {
+          "pca": 16,
+          "depth": 8,
+          "leaf": 30
+        },
+        {
+          "pca": 16,
+          "depth": 8,
+          "leaf": 60
+        },
+        {
+          "pca": 16,
+          "depth": 8,
+          "leaf": 100
+        },
+        {
+          "pca": 16,
+          "depth": 12,
+          "leaf": 10
+        },
+        {
+          "pca": 16,
+          "depth": 12,
+          "leaf": 30
+        },
+        {
+          "pca": 16,
+          "depth": 12,
+          "leaf": 60
+        },
+        {
+          "pca": 16,
+          "depth": 12,
+          "leaf": 100
+        },
+        {
+          "pca": 32,
+          "depth": 5,
+          "leaf": 10
+        },
+        {
+          "pca": 32,
+          "depth": 5,
+          "leaf": 30
+        },
+        {
+          "pca": 32,
+          "depth": 5,
+          "leaf": 60
+        },
+        {
+          "pca": 32,
+          "depth": 5,
+          "leaf": 100
+        },
+        {
+          "pca": 32,
+          "depth": 8,
+          "leaf": 10
+        },
+        {
+          "pca": 32,
+          "depth": 8,
+          "leaf": 30
+        },
+        {
+          "pca": 32,
+          "depth": 8,
+          "leaf": 60
+        },
+        {
+          "pca": 32,
+          "depth": 8,
+          "leaf": 100
+        },
+        {
+          "pca": 32,
+          "depth": 12,
+          "leaf": 10
+        },
+        {
+          "pca": 32,
+          "depth": 12,
+          "leaf": 30
+        },
+        {
+          "pca": 32,
+          "depth": 12,
+          "leaf": 60
+        },
+        {
+          "pca": 32,
+          "depth": 12,
+          "leaf": 100
+        },
+        {
+          "pca": 64,
+          "depth": 5,
+          "leaf": 10
+        },
+        {
+          "pca": 64,
+          "depth": 5,
+          "leaf": 30
+        },
+        {
+          "pca": 64,
+          "depth": 5,
+          "leaf": 60
+        },
+        {
+          "pca": 64,
+          "depth": 5,
+          "leaf": 100
+        },
+        {
+          "pca": 64,
+          "depth": 8,
+          "leaf": 10
+        },
+        {
+          "pca": 64,
+          "depth": 8,
+          "leaf": 30
+        },
+        {
+          "pca": 64,
+          "depth": 8,
+          "leaf": 60
+        },
+        {
+          "pca": 64,
+          "depth": 8,
+          "leaf": 100
+        },
+        {
+          "pca": 64,
+          "depth": 12,
+          "leaf": 10
+        },
+        {
+          "pca": 64,
+          "depth": 12,
+          "leaf": 30
+        },
+        {
+          "pca": 64,
+          "depth": 12,
+          "leaf": 60
+        },
+        {
+          "pca": 64,
+          "depth": 12,
+          "leaf": 100
+        }
+      ]
+    },
+    "rf": {
+      "name": "Random forest",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 32,
+          "max_features": 0.2
+        },
+        {
+          "pca": 32,
+          "max_features": 0.4
+        },
+        {
+          "pca": 64,
+          "max_features": 0.2
+        },
+        {
+          "pca": 64,
+          "max_features": 0.4
+        },
+        {
+          "pca": 128,
+          "max_features": 0.2
+        },
+        {
+          "pca": 128,
+          "max_features": 0.4
+        }
+      ]
+    },
+    "ada": {
+      "name": "AdaBoost",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 64,
+          "depth": 2,
+          "lr": 0.5
+        },
+        {
+          "pca": 64,
+          "depth": 2,
+          "lr": 1.0
+        },
+        {
+          "pca": 64,
+          "depth": 3,
+          "lr": 0.5
+        },
+        {
+          "pca": 64,
+          "depth": 3,
+          "lr": 1.0
+        },
+        {
+          "pca": 128,
+          "depth": 2,
+          "lr": 0.5
+        },
+        {
+          "pca": 128,
+          "depth": 2,
+          "lr": 1.0
+        },
+        {
+          "pca": 128,
+          "depth": 3,
+          "lr": 0.5
+        },
+        {
+          "pca": 128,
+          "depth": 3,
+          "lr": 1.0
+        }
+      ]
+    },
+    "gb": {
+      "name": "Gradient boosting",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 128,
+          "lr": 0.05,
+          "leaves": 7
+        },
+        {
+          "pca": 128,
+          "lr": 0.05,
+          "leaves": 15
+        },
+        {
+          "pca": 128,
+          "lr": 0.1,
+          "leaves": 7
+        },
+        {
+          "pca": 128,
+          "lr": 0.1,
+          "leaves": 15
+        },
+        {
+          "pca": 256,
+          "lr": 0.05,
+          "leaves": 7
+        },
+        {
+          "pca": 256,
+          "lr": 0.05,
+          "leaves": 15
+        },
+        {
+          "pca": 256,
+          "lr": 0.1,
+          "leaves": 7
+        },
+        {
+          "pca": 256,
+          "lr": 0.1,
+          "leaves": 15
+        }
+      ]
+    },
+    "svm": {
+      "name": "SVM (RBF)",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 256,
+          "C": 2.0,
+          "gamma": 0.125
+        },
+        {
+          "pca": 256,
+          "C": 2.0,
+          "gamma": 0.25
+        },
+        {
+          "pca": 256,
+          "C": 2.0,
+          "gamma": 0.5
+        },
+        {
+          "pca": 256,
+          "C": 8.0,
+          "gamma": 0.125
+        },
+        {
+          "pca": 256,
+          "C": 8.0,
+          "gamma": 0.25
+        },
+        {
+          "pca": 256,
+          "C": 8.0,
+          "gamma": 0.5
+        },
+        {
+          "pca": 256,
+          "C": 32.0,
+          "gamma": 0.125
+        },
+        {
+          "pca": 256,
+          "C": 32.0,
+          "gamma": 0.25
+        },
+        {
+          "pca": 256,
+          "C": 32.0,
+          "gamma": 0.5
+        },
+        {
+          "pca": 512,
+          "C": 2.0,
+          "gamma": 0.125
+        },
+        {
+          "pca": 512,
+          "C": 2.0,
+          "gamma": 0.25
+        },
+        {
+          "pca": 512,
+          "C": 2.0,
+          "gamma": 0.5
+        },
+        {
+          "pca": 512,
+          "C": 8.0,
+          "gamma": 0.125
+        },
+        {
+          "pca": 512,
+          "C": 8.0,
+          "gamma": 0.25
+        },
+        {
+          "pca": 512,
+          "C": 8.0,
+          "gamma": 0.5
+        },
+        {
+          "pca": 512,
+          "C": 32.0,
+          "gamma": 0.125
+        },
+        {
+          "pca": 512,
+          "C": 32.0,
+          "gamma": 0.25
+        },
+        {
+          "pca": 512,
+          "C": 32.0,
+          "gamma": 0.5
+        }
+      ]
+    },
+    "mlp": {
+      "name": "MLP",
+      "features": "cnn",
+      "grid": [
+        {
+          "pca": 64,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.0001
+        },
+        {
+          "pca": 64,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.001
+        },
+        {
+          "pca": 64,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.01
+        },
+        {
+          "pca": 64,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.0001
+        },
+        {
+          "pca": 64,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.001
+        },
+        {
+          "pca": 64,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.01
+        },
+        {
+          "pca": 128,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.0001
+        },
+        {
+          "pca": 128,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.001
+        },
+        {
+          "pca": 128,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.01
+        },
+        {
+          "pca": 128,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.0001
+        },
+        {
+          "pca": 128,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.001
+        },
+        {
+          "pca": 128,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.01
+        },
+        {
+          "pca": 256,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.0001
+        },
+        {
+          "pca": 256,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.001
+        },
+        {
+          "pca": 256,
+          "hidden": [
+            256
+          ],
+          "alpha": 0.01
+        },
+        {
+          "pca": 256,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.0001
+        },
+        {
+          "pca": 256,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.001
+        },
+        {
+          "pca": 256,
+          "hidden": [
+            512,
+            128
+          ],
+          "alpha": 0.01
+        }
+      ]
+    }
+  },
+  "target": "ref3",
+  "features_file": "features/resnet50_224.npz",
+  "seed": 42,
+  "outer_folds": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "inner_folds": 5,
+  "calibration_share": 0.15,
+  "selection": "mean of AUROC(referable) and AUROC(urgent) on the pooled inner out-of-fold predictions",
+  "calibration": "one-vs-rest isotonic regression on the inner out-of-fold predictions",
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1"
+  },
+  "started": "2026-10-25 04:55"
+}
