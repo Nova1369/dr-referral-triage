@@ -1,0 +1,6 @@
+group,photos,h_median,referable,mean_p_referable,missed,e0_coverage_referable,healthy,healthy_referred
+"APTOS, H cameras",1612,0.9989,55,0.4331,0.6364,0.4545,1557,0.0026
+"APTOS, M cameras",1298,0.0109,717,0.8200,0.1562,0.8103,581,0.1945
+"APTOS, S cameras",752,0.0778,715,0.8795,0.0615,0.8517,37,0.6757
+IDRiD,516,0.5996,323,0.7420,0.2693,0.6774,193,0.0518
+Messidor-2,1744,0.9984,457,0.1760,0.8993,0.0777,1287,0.0023

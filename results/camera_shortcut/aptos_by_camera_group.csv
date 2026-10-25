@@ -1,0 +1,46 @@
+model,name,group,metric,value,lo,hi
+lr,Logistic regression,H,miss_referable,0.6364,0.5000,0.7826
+lr,Logistic regression,H,urgent_detected,0.4000,0.0711,0.7223
+lr,Logistic regression,H,false_referral,0.0026,0.0006,0.0052
+lr,Logistic regression,H,miss_grade2,0.8000,0.6579,0.9167
+lr,Logistic regression,H,miss_grade34,0.2000,0.0000,0.5000
+lr,Logistic regression,M,miss_referable,0.1562,0.1284,0.1836
+lr,Logistic regression,M,urgent_detected,0.5357,0.4786,0.5959
+lr,Logistic regression,M,false_referral,0.1945,0.1616,0.2267
+lr,Logistic regression,M,miss_grade2,0.1945,0.1579,0.2324
+lr,Logistic regression,M,miss_grade34,0.0964,0.0634,0.1367
+lr,Logistic regression,S,miss_referable,0.0615,0.0424,0.0815
+lr,Logistic regression,S,urgent_detected,0.3627,0.2898,0.4358
+lr,Logistic regression,S,false_referral,0.6757,0.5161,0.8215
+lr,Logistic regression,S,miss_grade2,0.0632,0.0400,0.0881
+lr,Logistic regression,S,miss_grade34,0.0570,0.0249,0.0979
+svm,SVM (RBF),H,miss_referable,0.6182,0.4754,0.7556
+svm,SVM (RBF),H,urgent_detected,0.3333,0.0666,0.6667
+svm,SVM (RBF),H,false_referral,0.0045,0.0013,0.0081
+svm,SVM (RBF),H,miss_grade2,0.7500,0.6047,0.8788
+svm,SVM (RBF),H,miss_grade34,0.2667,0.0000,0.5714
+svm,SVM (RBF),M,miss_referable,0.1534,0.1272,0.1816
+svm,SVM (RBF),M,urgent_detected,0.5143,0.4533,0.5730
+svm,SVM (RBF),M,false_referral,0.1807,0.1504,0.2149
+svm,SVM (RBF),M,miss_grade2,0.1876,0.1508,0.2253
+svm,SVM (RBF),M,miss_grade34,0.1000,0.0665,0.1395
+svm,SVM (RBF),S,miss_referable,0.0587,0.0402,0.0776
+svm,SVM (RBF),S,urgent_detected,0.3420,0.2722,0.4138
+svm,SVM (RBF),S,false_referral,0.6486,0.4864,0.8182
+svm,SVM (RBF),S,miss_grade2,0.0651,0.0437,0.0895
+svm,SVM (RBF),S,miss_grade34,0.0415,0.0146,0.0758
+b2a,B2a Image size only,H,miss_referable,1.0000,1.0000,1.0000
+b2a,B2a Image size only,H,urgent_detected,0.0000,0.0000,0.0000
+b2a,B2a Image size only,H,false_referral,0.0000,0.0000,0.0000
+b2a,B2a Image size only,H,miss_grade2,1.0000,1.0000,1.0000
+b2a,B2a Image size only,H,miss_grade34,1.0000,1.0000,1.0000
+b2a,B2a Image size only,M,miss_referable,0.6109,0.5744,0.6474
+b2a,B2a Image size only,M,urgent_detected,0.0500,0.0241,0.0766
+b2a,B2a Image size only,M,false_referral,0.2754,0.2362,0.3128
+b2a,B2a Image size only,M,miss_grade2,0.6156,0.5704,0.6591
+b2a,B2a Image size only,M,miss_grade34,0.6036,0.5462,0.6654
+b2a,B2a Image size only,S,miss_referable,0.0042,0.0000,0.0099
+b2a,B2a Image size only,S,urgent_detected,0.1399,0.0862,0.2009
+b2a,B2a Image size only,S,false_referral,1.0000,1.0000,1.0000
+b2a,B2a Image size only,S,miss_grade2,0.0038,0.0000,0.0100
+b2a,B2a Image size only,S,miss_grade34,0.0052,0.0000,0.0172
