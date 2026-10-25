@@ -1,0 +1,31 @@
+scope,k,labels,ari,nmi
+all images,2,dataset,0.2097,0.3425
+all images,2,class,0.2162,0.1701
+all images,2,grade,0.2285,0.1687
+all images,3,dataset,0.1389,0.2923
+all images,3,class,0.2590,0.1741
+all images,3,grade,0.2785,0.1931
+all images,4,dataset,0.1426,0.2560
+all images,4,class,0.1086,0.1474
+all images,4,grade,0.1439,0.1681
+all images,5,dataset,0.1059,0.2374
+all images,5,class,0.1363,0.1550
+all images,5,grade,0.1635,0.1733
+all images,6,dataset,0.1019,0.2252
+all images,6,class,0.0808,0.1459
+all images,6,grade,0.1061,0.1662
+APTOS only,2,class,0.1872,0.2830
+APTOS only,2,grade,0.2758,0.3339
+APTOS only,2,camera (photo size),0.2794,0.4601
+APTOS only,3,class,0.2587,0.2700
+APTOS only,3,grade,0.3796,0.3559
+APTOS only,3,camera (photo size),0.3712,0.5063
+APTOS only,4,class,0.2985,0.2644
+APTOS only,4,grade,0.4163,0.3438
+APTOS only,4,camera (photo size),0.3832,0.4562
+APTOS only,5,class,0.1531,0.2374
+APTOS only,5,grade,0.2383,0.3144
+APTOS only,5,camera (photo size),0.4688,0.5195
+APTOS only,6,class,0.1613,0.2241
+APTOS only,6,grade,0.2527,0.3108
+APTOS only,6,camera (photo size),0.4969,0.5264
