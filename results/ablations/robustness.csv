@@ -1,0 +1,9 @@
+variant,thresholds,ref_home,urgent_urgent,healthy_home,uncertain,referred,auroc_ref,auroc_urg
+none,original calibration,0.04237,0.91189,0.87770,0.01010,0.45139,0.97272,0.91968
+none,recalibrated on altered photos,0.04237,0.91189,0.87770,0.01010,0.45139,0.97272,0.91968
+blur,original calibration,0.08204,0.96516,0.73517,0.00492,0.52512,0.91829,0.87236
+blur,recalibrated on altered photos,0.03631,0.91393,0.49103,0.23020,0.46341,0.91829,0.87236
+dark,original calibration,0.06725,0.87090,0.88598,0.01993,0.42654,0.96890,0.91239
+dark,recalibrated on altered photos,0.05044,0.91803,0.86391,0.02267,0.44375,0.96890,0.91239
+jpeg,original calibration,0.02892,0.93033,0.69655,0.01147,0.56308,0.94515,0.85100
+jpeg,recalibrated on altered photos,0.01748,0.89139,0.64966,0.10650,0.50055,0.94515,0.85100
