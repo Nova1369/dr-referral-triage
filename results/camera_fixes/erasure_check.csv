@@ -1,0 +1,7 @@
+eyes,eraser,n,n_H,auroc
+healthy (grade 0),none,1803,1531,1.0000
+healthy (grade 0),erasure,1803,1531,0.5000
+healthy (grade 0),erasure_grade,1803,1531,0.5000
+referable (grades 2-4),none,772,55,0.9962
+referable (grades 2-4),erasure,772,55,0.9978
+referable (grades 2-4),erasure_grade,772,55,0.6246
