@@ -1,5 +1,10 @@
 # Project code: preprocessing, features, models, the referral rules C1–C3 and experiments E0–E3
 
+> **Paths in this file.** It was written while the scripts sat in one working folder next to the data
+> (`../data_512`, `../results`). In this repository the scripts are in `src/`: run them from the repository
+> root as `python src/<script>.py --data data_512 --results results_rerun ...`, or simply use `run_all.sh`.
+
+
 The scripts, run in this order:
 
 | Step | Script | What it makes |
