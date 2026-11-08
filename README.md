@@ -30,7 +30,7 @@ dr-referral-triage/
 ├── src/                    all Python code (scripts import each other, keep them together)
 │   ├── dr_preprocess.py        step 1: crop, quality, duplicates, groups, folds
 │   ├── extract_features.py     step 2: ResNet-50 features
-│   ├── run_models.py, summarize_e1.py    step 3: E1, 11 course models + baselines
+│   ├── run_models.py, summarize_e1.py, check_splits.py   step 3: E1 + leakage check
 │   ├── e0_conformal.py         step 4: E0
 │   ├── kmeans_check.py         step 5
 │   ├── c1_referral.py          step 6: C1, B3-B5, C1-q, C1-g

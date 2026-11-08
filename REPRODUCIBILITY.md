@@ -23,7 +23,7 @@ Swayam Sahu, Sahil Sihag, Nitesh Kumar - IIT Jodhpur, November 2026.
 | Pretrained weights | timm ResNet-50, URL + SHA-256 in `checkpoints/README.md`, `scripts/download_weights.sh` checks the hash |
 | Trained model | `checkpoints/lr_aptos_ref3.npz` (55 kB) + `src/export_checkpoint.py check` |
 | Randomness | seed 42 everywhere; folds stratified and deterministic (same on every machine); bootstrap with 1,000 group resamples shared by all models |
-| Splits / leakage | duplicates and look-alike photos grouped; groups never cross train / calibration / test; an independent script rebuilt every split and confirmed this |
+| Splits / leakage | duplicates and look-alike photos grouped; groups never cross train / calibration / test; `src/check_splits.py` rebuilds every split from the saved fold files and confirms this (run in step 3) |
 | Reference outputs | `results/` (aggregate only); compare a re-run with `scripts/compare_results.py` |
 | Hyperparameters | chosen in 5 inner folds of each of 10 outer folds; per-fold choices in `results/e1/best_params.csv`, full configs in `results/e1/run_config*.json` |
 | Uncertainty | 95 % group-bootstrap CIs, Wilson intervals for subgroups, exact McNemar tests, 200-1,000 draws for C2/C2-IW |

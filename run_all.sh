@@ -34,6 +34,7 @@ if [ "$START" -le 3 ]; then
   "$PY" src/run_models.py --data "$DATA" --out "$RESULTS/e1"
   "$PY" src/run_models.py --data "$DATA" --out "$RESULTS/e1" --models lr --target grade
   "$PY" src/summarize_e1.py --data "$DATA" --results "$RESULTS/e1"
+  "$PY" src/check_splits.py --data "$DATA" --results "$RESULTS/e1"     # leakage check
 fi
 if [ "$START" -le 4 ]; then
   step 4 "E0: standard conformal prediction, APTOS -> IDRiD, Messidor-2 -> $RESULTS/e0"
