@@ -1,0 +1,17 @@
+{
+  "model": "LogisticRegression",
+  "C": 0.003,
+  "max_iter": 5000,
+  "classes": [
+    "no_referral",
+    "routine",
+    "urgent"
+  ],
+  "train_set": "APTOS 2019 train (all photos)",
+  "n_train": 3662,
+  "features": "ResNet-50 (timm resnet50_ram-a26f946b.pth) global-average-pooled, 224 px, 2048-d",
+  "backbone_sha256": "a26f946bdcb2e618263d03d8b60b66a26f7788dbadc1940c315b2bf62020a3e7",
+  "sklearn": "1.9.1",
+  "numpy": "2.5.3",
+  "sha256": "b0e390598067544290b2a430018b73df4ae0d9e4bdb2878025b35672caf32d68"
+}
