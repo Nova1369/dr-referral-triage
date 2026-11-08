@@ -1,0 +1,25 @@
+# datasets and derived images/features are never committed (licences; see data/README.md)
+datasets/
+data_512/
+*.npz
+!checkpoints/lr_aptos_ref3.npz
+*.pth
+results_rerun/
+# per-image outputs (prediction lists) stay local
+**/fold[0-9].csv.gz
+**/oof_*.csv.gz
+**/decisions_*.csv.gz
+**/missed_urgent.csv
+**/aptos_model.csv.gz
+**/examples*.png
+__pycache__/
+*.pyc
+.DS_Store
+report/*.aux
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+report/*.bbl
+report/*.blg

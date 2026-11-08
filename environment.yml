@@ -1,0 +1,11 @@
+# conda env create -f environment.yml && conda activate dr-triage
+# Same pins as requirements.txt. If a pinned version is not available for your platform, the
+# looser set in requirements-min.txt also reproduces the results (see REPRODUCIBILITY.md).
+name: dr-triage
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - -r requirements.txt
