@@ -89,7 +89,50 @@ Report number -> file: every table in the report is printed in `results/<experim
 
 ## Commit history
 
-Run `git log --date=iso` for the full history.
+Every commit on `main`, oldest first (dates in IST). The report's commit table lists the same commits up to
+the code freeze (no. 37). This table is added by the last commit, so that one is not listed;
+`git log --date=iso` shows it.
+
+| # | Commit | Date (IST) | Message |
+|---|---|---|---|
+| 1 | `eb7ccc49ce4d84e7e33e8c501b3ee47eb2e9ca58` | 2026-10-25 00:39 | Preprocessing: retina crop, quality checks, duplicate groups, folds |
+| 2 | `9ed58ff6199a8accbd3527089305b35601192937` | 2026-10-25 02:29 | Frozen ResNet-50 feature extraction |
+| 3 | `e3a47c07abe73cd9113afc5d86790c04adef8b36` | 2026-10-25 09:49 | Add requirements.txt |
+| 4 | `85607c91ba6dd4500205142a2ce7e07dc6ba08cb` | 2026-10-25 10:25 | E1: nested CV for the course models and baselines |
+| 5 | `5b03e5c542ebab8452bd79b3cd288c8425c9a2cb` | 2026-10-25 10:28 | E0: standard conformal prediction at IDRiD and Messidor-2 |
+| 6 | `51e23b0020069511b52223a8f24df4785490ce56` | 2026-10-25 11:29 | E1 summary tables; E0 results |
+| 7 | `e711fbd545b78bdfb46adc0f14d5c6b9e1b289e8` | 2026-10-25 11:30 | E1 results |
+| 8 | `7b233b7f2d713e8266232ae8ac015e029fa2a1dc` | 2026-10-25 11:32 | k-means check |
+| 9 | `30ae18382435c138cca571b52567dcf44ff4782d` | 2026-10-25 11:58 | Camera shortcut study |
+| 10 | `57e9d73397e05852ae6620b49ed2d082d9a20403` | 2026-10-25 12:14 | run_all.sh: every step in order |
+| 11 | `5a2082b6dd32c34f3191abbfd1008e35161395be` | 2026-10-25 12:16 | Pipeline notes |
+| 12 | `328064940c44ac1e9fffb64881a947c3d904dc9c` | 2026-11-03 21:31 | C1 class-wise referral rule; error analysis |
+| 13 | `91a9b7c2cd2c9836409876d0eddfdcce28fc9503` | 2026-11-04 01:27 | Ablations and robustness checks |
+| 14 | `597b1fffd1b4b7f7e553b32d34bf4032bd279673` | 2026-11-04 01:30 | C1 results |
+| 15 | `b60cfed70be5be110dbe6e98d69119402fdb1f62` | 2026-11-04 01:36 | C3: prevalence shift and workload forecast |
+| 16 | `9821a6f00300ac7e6b9c08c1a069a7b7bc490c66` | 2026-11-04 02:04 | Ablation and robustness results |
+| 17 | `437ef23817c6003b8375f0bb8e6790ee0d96a953` | 2026-11-04 02:18 | C2/E2: recalibration at new clinics, C2-PAC |
+| 18 | `98eb9b7b442a7b6a2178f332edf574f1a6a0d2f7` | 2026-11-04 02:19 | Update requirements |
+| 19 | `e8abf8148e5646cf35223532b1cbb6c57595ad2a` | 2026-11-04 10:26 | Camera fixes tuned under the E1 protocol |
+| 20 | `bd70ea68ddb259a2722a99627f9330b62610dcf5` | 2026-11-04 10:29 | E2 results |
+| 21 | `9f82faac8071385439726a0c1da7c3cf6ad35566` | 2026-11-04 16:43 | Exact evidence maps, deletion and mirror tests |
+| 22 | `6ea7da0aa936bab4917eb851f5a195672b157a1a` | 2026-11-04 18:35 | Feature variants, including mirrored photos |
+| 23 | `fb76710b1ffe8e1eb78c89c0bab23175490f2447` | 2026-11-04 20:33 | Mirror-averaged features |
+| 24 | `92ed8b00efdf6a899d4b1a9d742c01718b90deb4` | 2026-11-05 01:24 | Camera-group benchmark against strong baselines |
+| 25 | `e5f8ea8728984556390a7f4cea88ac626ae26c62` | 2026-11-05 01:33 | Camera-group benchmark results |
+| 26 | `200fe582cbf1685873be4131095e1ffdedc3c782` | 2026-11-05 01:34 | C2-IW: label-efficient recalibration |
+| 27 | `f951cadde02dc51834256c364108b1e8eaddbc9e` | 2026-11-05 01:56 | Baseline sweeps at matched fairness |
+| 28 | `4d1a577322acaedfe73740050970935f0204ccb4` | 2026-11-05 02:01 | C2-IW results |
+| 29 | `08984095a720febebf61e347bb8175ec4e1ab67d` | 2026-11-05 02:01 | Update run_all.sh and notes for the new studies |
+| 30 | `c4f93ae58603ec8ead5c3c4039c2044ea8323d15` | 2026-11-08 17:09 | Restructure as a repository: src/, docs/, results/ |
+| 31 | `45ff75397bc442bb6f500b4d8de4371150eaf455` | 2026-11-08 17:10 | Export the final model as a small checkpoint |
+| 32 | `3b44f9fb509a20d2ae5b689eedd6ad595817e27d` | 2026-11-08 17:10 | run_all.sh for the repository layout |
+| 33 | `520c2bd6bd8d9f5626ff073d3f8a45fcc6a2d5a3` | 2026-11-08 17:10 | Pin the environment; weight download and result comparison scripts |
+| 34 | `8ee80c8ef1f69619baac3032bae459e09ba67728` | 2026-11-08 17:11 | Notes for data, checkpoints and results; MIT licence |
+| 35 | `01d5099164576cab238689773ad9fea30a4a6dc2` | 2026-11-08 17:11 | README: setup, reproduction, layout |
+| 36 | `9abb423e7894cadf839bc7bbc1e91d56ece353d3` | 2026-11-08 17:12 | Reproducibility statement |
+| 37 | `034205e71c87a433283d12f10fcfc5dc2c730ed0` | 2026-11-08 17:12 | Leakage check for the E1 splits |
+| 38 | `84df781cde996c0f55f765b0dbb0bb4a34086a2f` | 2026-11-08 17:17 | CVPR report |
 
 ## Licence and data
 
