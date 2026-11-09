@@ -75,6 +75,31 @@ def tex_table(rows, panels):
             "\\end{table*}\n")
 
 
+def rev(ref):
+    return subprocess.run(["git", "rev-parse", ref], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+
+
+def last_change(path):
+    """Last commit that changed `path`."""
+    return subprocess.run(["git", "log", "-1", "--format=%H", "--", str(path.relative_to(ROOT))],
+                          cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+
+
+def check(path, make, until):
+    """Is the table in `path` complete up to `until`? The commit that added the table cannot be in it,
+    so a table that ends just before that commit also counts as complete."""
+    if not path.exists():
+        return f"{path.relative_to(ROOT)}: missing"
+    current, rows = path.read_text(), git_log(until)
+    if current == make(rows):
+        return None
+    if last_change(path) == rev(until) and len(rows) > 1 and current == make(rows[:-1]):
+        return None
+    listed = next((n for n in range(len(rows), -1, -1) if current == make(rows[:n])), None)
+    missing = f"{len(rows) - listed} newer commit(s) not listed" if listed is not None else "differs from git log"
+    return f"{path.relative_to(ROOT)}: {missing}"
+
+
 def main():
     ap = argparse.ArgumentParser(description="Rebuild the commit tables in README.md and the report.")
     ap.add_argument("--freeze", default="HEAD", help="last commit for the report table (default: HEAD)")
@@ -82,14 +107,13 @@ def main():
     ap.add_argument("--check", action="store_true", help="do not write; exit 1 if a table is out of date")
     a = ap.parse_args()
 
-    readme, tex = new_readme(git_log("HEAD")), tex_table(git_log(a.freeze), a.panels)
-    stale = [p.relative_to(ROOT) for p, new in ((README, readme), (TEX, tex))
-             if not p.exists() or p.read_text() != new]
     if a.check:
-        print("out of date: " + ", ".join(map(str, stale)) if stale else "commit tables are up to date")
-        sys.exit(1 if stale else 0)
-    README.write_text(readme)
-    TEX.write_text(tex)
+        problems = [p for p in (check(README, new_readme, "HEAD"),
+                                check(TEX, lambda r: tex_table(r, a.panels), a.freeze)) if p]
+        print("\n".join(problems) if problems else "commit tables are up to date")
+        sys.exit(1 if problems else 0)
+    README.write_text(new_readme(git_log("HEAD")))
+    TEX.write_text(tex_table(git_log(a.freeze), a.panels))
     print(f"README: {len(git_log('HEAD'))} commits; report: {len(git_log(a.freeze))} commits (up to {a.freeze})")
 
 

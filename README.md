@@ -135,6 +135,7 @@ The report's commit table lists the commits up to the code freeze.
 | 37 | `034205e71c87a433283d12f10fcfc5dc2c730ed0` | 2026-11-08 17:12 | Swayam Sahu | Leakage check for the E1 splits |
 | 38 | `84df781cde996c0f55f765b0dbb0bb4a34086a2f` | 2026-11-08 17:17 | Swayam Sahu | CVPR report |
 | 39 | `bdd6f217dec53078d2b2e0703eea341675813639` | 2026-11-09 18:26 | Swayam Sahu | README: commit history table |
+| 40 | `c17444e45b0bbf51378f7f0b19d62d14bb8be8fd` | 2026-11-09 22:48 | Swayam Sahu | Add script that rebuilds the commit tables from git log |
 
 ## Licence and data
 
