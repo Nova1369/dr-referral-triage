@@ -284,58 +284,7 @@ C2-IW coverage approximate & $\lambda\ge0.5$ up to 3 points short & 1,000 draws,
 
 \textbf{Artifacts.} \texttt{requirements.txt} pins the exact versions (Python 3.13.16, numpy 2.5.3, pandas 3.0.5, scikit-learn 1.9.1, scipy 1.18.1; torch 2.7.1 for features), with \texttt{environment.yml} for conda. Checkpoints: the final logistic regression and its standardiser (\texttt{checkpoints/lr\_aptos\_ref3.npz}, 55\,kB; \texttt{export\_checkpoint.py check} reproduces it to $6\times10^{-7}$); the 102\,MB ResNet-50 backbone is linked (timm release \texttt{resnet50\_ram-a26f946b.pth}, SHA-256 \texttt{a26f946b\dots a3e7}) and checked by \texttt{scripts/download\_weights.sh}. Datasets are not included (Messidor-2 licence); aggregate reference outputs are in \texttt{results/}, and \texttt{scripts/compare\_results.py} diffs a re-run. A second machine (Linux ARM, Python 3.10, scikit-learn 1.7) reproduced C1, C3, the error analysis and C2-IW identically, E2 within 0.1 points and the camera benchmark within about 1 point.
 
-\begin{table*}[t]\centering
-\begin{minipage}[t]{0.495\textwidth}\centering\scriptsize
-\begin{tabular}{@{}r@{\hspace{4pt}}l@{\hspace{4pt}}l@{\hspace{4pt}}p{0.5\linewidth}@{}}\toprule
-\# & Commit & Date (IST) & Message\\\midrule
-1 & \texttt{eb7ccc49ce} & 2026-10-25 00:39 & Preprocessing: retina crop, quality checks, duplicate groups, folds\\
-2 & \texttt{9ed58ff619} & 2026-10-25 02:29 & Frozen ResNet-50 feature extraction\\
-3 & \texttt{e3a47c07ab} & 2026-10-25 09:49 & Add requirements.txt\\
-4 & \texttt{85607c91ba} & 2026-10-25 10:25 & E1: nested CV for the course models and baselines\\
-5 & \texttt{5b03e5c542} & 2026-10-25 10:28 & E0: standard conformal prediction at IDRiD and Messidor-2\\
-6 & \texttt{51e23b0020} & 2026-10-25 11:29 & E1 summary tables; E0 results\\
-7 & \texttt{e711fbd545} & 2026-10-25 11:30 & E1 results\\
-8 & \texttt{7b233b7f2d} & 2026-10-25 11:32 & k-means check\\
-9 & \texttt{30ae183824} & 2026-10-25 11:58 & Camera shortcut study\\
-10 & \texttt{57e9d73397} & 2026-10-25 12:14 & run\_all.sh: every step in order\\
-11 & \texttt{5a2082b6dd} & 2026-10-25 12:16 & Pipeline notes\\
-12 & \texttt{328064940c} & 2026-11-03 21:31 & C1 class-wise referral rule; error analysis\\
-13 & \texttt{91a9b7c2cd} & 2026-11-04 01:27 & Ablations and robustness checks\\
-14 & \texttt{597b1fffd1} & 2026-11-04 01:30 & C1 results\\
-15 & \texttt{b60cfed70b} & 2026-11-04 01:36 & C3: prevalence shift and workload forecast\\
-16 & \texttt{9821a6f003} & 2026-11-04 02:04 & Ablation and robustness results\\
-17 & \texttt{437ef23817} & 2026-11-04 02:18 & C2/E2: recalibration at new clinics, C2-PAC\\
-18 & \texttt{98eb9b7b44} & 2026-11-04 02:19 & Update requirements\\
-19 & \texttt{e8abf8148e} & 2026-11-04 10:26 & Camera fixes tuned under the E1 protocol\\
-\bottomrule
-\end{tabular}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.495\textwidth}\centering\scriptsize
-\begin{tabular}{@{}r@{\hspace{4pt}}l@{\hspace{4pt}}l@{\hspace{4pt}}p{0.5\linewidth}@{}}\toprule
-\# & Commit & Date (IST) & Message\\\midrule
-20 & \texttt{bd70ea68dd} & 2026-11-04 10:29 & E2 results\\
-21 & \texttt{9f82faac80} & 2026-11-04 16:43 & Exact evidence maps, deletion and mirror tests\\
-22 & \texttt{6ea7da0aa9} & 2026-11-04 18:35 & Feature variants, including mirrored photos\\
-23 & \texttt{fb76710b1f} & 2026-11-04 20:33 & Mirror-averaged features\\
-24 & \texttt{92ed8b00ef} & 2026-11-05 01:24 & Camera-group benchmark against strong baselines\\
-25 & \texttt{e5f8ea8728} & 2026-11-05 01:33 & Camera-group benchmark results\\
-26 & \texttt{200fe582cb} & 2026-11-05 01:34 & C2-IW: label-efficient recalibration\\
-27 & \texttt{f951cadde0} & 2026-11-05 01:56 & Baseline sweeps at matched fairness\\
-28 & \texttt{4d1a577322} & 2026-11-05 02:01 & C2-IW results\\
-29 & \texttt{08984095a7} & 2026-11-05 02:01 & Update run\_all.sh and notes for the new studies\\
-30 & \texttt{c4f93ae586} & 2026-11-08 17:09 & Restructure as a repository: src/, docs/, results/\\
-31 & \texttt{45ff75397b} & 2026-11-08 17:10 & Export the final model as a small checkpoint\\
-32 & \texttt{3b44f9fb50} & 2026-11-08 17:10 & run\_all.sh for the repository layout\\
-33 & \texttt{520c2bd6bd} & 2026-11-08 17:10 & Pin the environment; weight download and result comparison scripts\\
-34 & \texttt{8ee80c8ef1} & 2026-11-08 17:11 & Notes for data, checkpoints and results; MIT licence\\
-35 & \texttt{01d5099164} & 2026-11-08 17:11 & README: setup, reproduction, layout\\
-36 & \texttt{9abb423e78} & 2026-11-08 17:12 & Reproducibility statement\\
-37 & \texttt{034205e71c} & 2026-11-08 17:12 & Leakage check for the E1 splits\\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\caption{Commit history of the repository up to the code freeze (branch \texttt{main}; short hashes, dates in IST). The commit that adds this report comes next and is listed, with full hashes, in the README.}\label{tab:commits}
-\end{table*}
+\input{commit_table}
 
 \textbf{Acknowledgement.} Messidor-2 images: Kindly provided by the Messidor program partners (see \url{https://www.adcis.net/en/third-party/messidor/}). Messidor-2 grades: Krause et al.~\cite{krause}.
 
