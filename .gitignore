@@ -23,3 +23,9 @@ report/*.fdb_latexmk
 report/*.synctex.gz
 report/*.bbl
 report/*.blg
+# editors and local Python environments
+.idea/
+.vscode/
+.venv/
+venv/
+.ipynb_checkpoints/
