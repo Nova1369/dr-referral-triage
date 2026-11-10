@@ -54,7 +54,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from threadpoolctl import threadpool_limits
 
-from c1_referral import HOME, ROUTINE, URGENT, UNCERTAIN, camera_groups, classwise_thresholds, decide_from_sets
+from conformal import HOME, ROUTINE, URGENT, UNCERTAIN, classwise_thresholds, decide_from_sets
+from c1_referral import camera_groups
 from dr_preprocess import assign_folds
 from e2_new_clinics import Pool
 

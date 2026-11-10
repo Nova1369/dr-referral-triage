@@ -47,7 +47,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from threadpoolctl import threadpool_limits
 
-from c1_referral import HOME, ROUTINE, URGENT, camera_groups, classwise_thresholds, decide_from_sets
+from conformal import HOME, ROUTINE, URGENT, classwise_thresholds, decide_from_sets
+from c1_referral import camera_groups
 from dr_preprocess import assign_folds
 
 C_GRID = [3e-4, 1e-3, 3e-3, 1e-2]

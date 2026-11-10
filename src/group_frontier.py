@@ -39,7 +39,8 @@ from joblib import Parallel, delayed
 from scipy.stats import binomtest
 from sklearn.preprocessing import StandardScaler
 
-from c1_referral import HOME, URGENT, camera_groups, classwise_thresholds, decide_from_sets
+from conformal import HOME, URGENT, classwise_thresholds, decide_from_sets
+from c1_referral import camera_groups
 from dr_preprocess import assign_folds
 from group_robust import C_FIX, GROUPS, auroc, averaged, camera_groups_from, cells, fit, proba, wilson
 

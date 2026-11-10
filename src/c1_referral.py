@@ -61,8 +61,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-HOME, ROUTINE, URGENT, UNCERTAIN = 0, 1, 2, 3
-DECISION_NAMES = {HOME: "no referral", ROUTINE: "routine", URGENT: "urgent", UNCERTAIN: "uncertain"}
+from conformal import (DECISION_NAMES, HOME, ROUTINE, UNCERTAIN, URGENT, classwise_thresholds,
+                       decide_from_sets, marginal_threshold)
+
 RULES = ["argmax", "B3", "B4", "B5", "C1", "C1-g", "C1-q"]
 RULE_NAMES = {"argmax": "Most likely class", "B3": "B3 tuned thresholds", "B4": "B4 standard conformal",
               "B5": "B5 uncertain if top probability < 0.6", "C1": "C1 class-wise conformal",
@@ -83,39 +84,11 @@ B5_CUT = 0.6
 # rules
 # --------------------------------------------------------------------------------------------
 
-def conformal_quantile(scores, alpha):
-    """The ceil((n + 1)(1 - alpha))-th smallest score; infinite if there are too few scores."""
-    n = len(scores)
-    k = math.ceil((n + 1) * (1 - alpha))
-    return np.inf if k > n else float(np.sort(scores)[k - 1])
-
-
-def classwise_thresholds(P, y, alpha):
-    S = 1.0 - P
-    return np.array([conformal_quantile(S[y == c, c], alpha) for c in range(P.shape[1])])
-
-
-def marginal_threshold(P, y, alpha):
-    S = 1.0 - P
-    return conformal_quantile(S[np.arange(len(y)), y], alpha)
-
-
 def tuned_threshold(score_pos, sens):
     """Largest observed threshold t with at least `sens` of the positives scoring >= t."""
     s = np.sort(score_pos)
     m = int(math.floor(len(s) * (1 - sens) + 1e-9))
     return float(s[m])
-
-
-def decide_from_sets(in_set):
-    urgent = in_set[:, 2]
-    only_routine = in_set[:, 1] & ~in_set[:, 0] & ~urgent
-    only_none = in_set[:, 0] & ~in_set[:, 1] & ~urgent
-    d = np.full(len(in_set), UNCERTAIN)
-    d[only_none] = HOME
-    d[only_routine] = ROUTINE
-    d[urgent] = URGENT
-    return d
 
 
 def decide_grader(in_set):

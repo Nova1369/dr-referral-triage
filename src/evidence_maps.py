@@ -394,7 +394,7 @@ def stage_flip(args):
 
 def c1_decisions(R, man, alpha):
     """Out-of-fold C1 decisions on APTOS for E1's model and the camera-decorrelated one."""
-    from c1_referral import classwise_thresholds, decide_from_sets
+    from conformal import classwise_thresholds, decide_from_sets
     y = man["ref3"].to_numpy(int)
     row = pd.Series(np.arange(len(man)), index=man["uid"])
     dec = {m: np.full(len(man), -1) for m in MODELS}
@@ -419,7 +419,8 @@ def stage_examples(args):
     import matplotlib.pyplot as plt
     from matplotlib import cm
     from PIL import Image
-    from c1_referral import HOME, ROUTINE, URGENT, UNCERTAIN, camera_groups
+    from conformal import HOME, ROUTINE, URGENT, UNCERTAIN
+    from c1_referral import camera_groups
     out, R = out_dir(args), Path(args.results)
     man, _ = common(args)
     y = man["ref3"].to_numpy(int)
@@ -705,7 +706,7 @@ def stage_summary(args):
                 L.append(f"| {dn} ({sel.sum()}) | {name} | {dref.mean():.3f} | {dref.max():.2f} | "
                          f"{100 * np.mean(Pm[sel].argmax(1) != P0[sel].argmax(1)):.1f} % |")
         # C1 decisions of the mirrored APTOS photos, with each fold's thresholds
-        from c1_referral import classwise_thresholds, decide_from_sets
+        from conformal import classwise_thresholds, decide_from_sets
         W_, b_ = heads["W"], heads["b"]
         Xf = np.load(Path(args.data) / "features" / "resnet50_224.npz")["X"]
         row = pd.Series(np.arange(len(man)), index=man["uid"])

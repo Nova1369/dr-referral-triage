@@ -66,8 +66,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from threadpoolctl import threadpool_limits
 
-from c1_referral import (HOME, ROUTINE, URGENT, UNCERTAIN, camera_groups, classwise_thresholds,
-                         decide_from_sets, marginal_threshold, tuned_threshold)
+from conformal import (HOME, ROUTINE, URGENT, UNCERTAIN, classwise_thresholds, decide_from_sets,
+                       marginal_threshold)
+from c1_referral import camera_groups, tuned_threshold
 from dr_preprocess import assign_folds
 from run_models import isotonic_apply, isotonic_fit
 

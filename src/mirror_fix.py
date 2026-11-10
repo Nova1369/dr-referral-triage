@@ -36,7 +36,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 from ablations import C_FIXED, K_DRAWS, auroc, fit_lr, load_features, proba, rule_metrics, same_camera_auroc
-from c1_referral import HOME, classwise_thresholds, decide_from_sets
+from conformal import HOME, classwise_thresholds, decide_from_sets
 from e2_new_clinics import Pool
 
 NAMES = {"plain": "Features of the photo (E1)", "averaged": "Mirror-averaged features"}

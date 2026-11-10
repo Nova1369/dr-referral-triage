@@ -33,6 +33,7 @@ dr-referral-triage/
 │   ├── run_models.py, summarize_e1.py, check_splits.py   step 3: E1 + leakage check
 │   ├── e0_conformal.py         step 4: E0
 │   ├── kmeans_check.py         step 5
+│   ├── conformal.py            the class-wise conformal rule itself (used by C1, C2 and C3)
 │   ├── c1_referral.py          step 6: C1, B3-B5, C1-q, C1-g
 │   ├── e2_new_clinics.py       step 7: C2/E2, B6, B7, C2-PAC
 │   ├── c3_prevalence.py        step 8: C3/E3, B8, B9, BBSE

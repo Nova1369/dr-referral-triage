@@ -352,6 +352,8 @@ A model can therefore score well on APTOS just by recognising the camera. B2a (s
 
 ## 12. Step 6: C1, a referral rule with one conformal threshold per class (`c1_referral.py`)
 
+The rule itself (scores, the per-class thresholds, the prediction sets and the decision) is in `conformal.py`, about 70 lines with the reasoning written out; `c1_referral.py` runs it on APTOS against the baselines, and C2 and C3 reuse it.
+
 ```bash
 python c1_referral.py --data ../data_512 --results ../results/e1     # about half a minute
 ```

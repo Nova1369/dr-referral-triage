@@ -59,7 +59,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from c1_referral import HOME, ROUTINE, URGENT, UNCERTAIN, decide_from_sets
+from conformal import HOME, ROUTINE, URGENT, UNCERTAIN, decide_from_sets
 from e2_new_clinics import Pool
 
 K_GRID = {"messidor2": [25, 50, 75, 100, 150, 200, 300], "idrid": [20, 30, 50, 75, 100],
